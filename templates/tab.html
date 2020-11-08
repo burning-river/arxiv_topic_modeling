@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;
+background-color: lightblue;}
+    <style>
+      .tabcontent.container {
+        max-width: 1000px;
+      }
+.tabcontent.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.tabcontent.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <h2> Problem statement</h2>
+           <body>
+            <p>This project is geared towards young researchers such as undergraduates motivated to pursue graduate school. Selecting a research topic which might lead to a thesis can be a daunting challenge. There are many factors to be considered. While personal interests and experience matter, a balance must be struck with the currently available opportunities and future promise in any particular field. Within a field, being aware of rising trends, for e.g. 'Machine learning' in Physics, is also extremely important.
+</p>
+<p>
+<img src="https://www.meme-arsenal.com/memes/c098fd75956a601eff04312e8e8f133d.jpg" style="width:50%">
+</p>
+
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+<form role="form" method="POST" action="/">
+  <label for="year1">Choose Year 1:</label>
+  <input id="input1" list="year1" name="number1" placeholder="Select year" style="max-width: 1000px;">
+  <datalist id="year1">
+    <option value="2010">
+    <option value="2011">
+    <option value="2012">
+    <option value="2013">
+    <option value="2014">
+    <option value="2015">
+    <option value="2016">
+    <option value="2017">
+    <option value="2018">
+    <option value="2019">
+    <option value="2020">
+  </datalist>
+<!--div-->
+  <label for="year2">Choose Year 2:</label>
+  <input id="input2" list="year2" name="number2" placeholder="Select year" style="max-width: 1000px;">
+  <datalist id="year2">
+    <option value="2010">
+    <option value="2011">
+    <option value="2012">
+    <option value="2013">
+    <option value="2014">
+    <option value="2015">
+    <option value="2016">
+    <option value="2017">
+    <option value="2018">
+    <option value="2019">
+    <option value="2020">
+  </datalist>
+  <input type="submit">
+          </form>
+</div>
+    <div class="container">
+
+        <div class="row">
+        {% for image in plot %}
+         <div class="column">
+             <img src="{{ image }}" style="width:50%">
+         </div>
+        {% endfor %}
+</div>
+</div>
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+<h3>Trends: a closer look</h3>
+          {% for error in errors %}
+            <h4>{{ error }}</h4>
+          {% endfor %}
+          <br>
+        {% for image in trend_plots %}
+         <div class="column">
+             <img src="{{ image }}" style="width:100%">
+         </div>
+        {% endfor %}
+
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
+
