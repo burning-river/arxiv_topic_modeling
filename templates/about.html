@@ -1,30 +1,107 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Skeleton application demoing Heroku and Flask integration.">
-    <meta name="author" content="@gotoariel">
-    <!-- <link rel="icon" href="favicon.ico"> -->
+    <title>Arxiv: Subjects and Titles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
 
-    <title>Wilkommen, bienvenue, and welcome to Heroku!</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+body {
+  background-color: lightblue;
+}    </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-left">
-          <h2>About</h2>
-          <p><a href="/">Home</a></p>
-        </div>
-      </div>
+        <div class="col-sm-20 col-sm-offset-1">
+          <h1>SELECTING RESEARCH TOPICS EFFECTIVELY</h1>
+<div class="col-sm-10 col-sm-offset-1">
+	<h2> Problem statement</h2>
+	   <body>
+	    <p>This project is geared towards young researchers such as undergraduates motivated to pursue graduate school. Selecting a research topic which might lead to a thesis can be a daunting challenge. There are many factors to be considered. While personal interests and experience matter, a balance must be struck with the currently available opportunities and future promise in any particular field. Within a field, being aware of rising trends, for e.g. 'Machine learning' in Physics, is also extremely important.
+</p>
+<p>
+<img src="https://www.meme-arsenal.com/memes/c098fd75956a601eff04312e8e8f133d.jpg" style="width:50%">
+</p>
+<h2>Solution</h2>
+<p>Using the <a href="https://arxiv.org">arxiv</a> database for physics, I have compared the buzz words in all of physics between two different years. We can see some emerging trends such as 'neural networks' and 'machine learning' as well as some topics that have stayed both stable and prolific over the years such as 'optics'.
+</p>
+<p>
+A bar chart provided below compares the most active fields within physics between
+two different years. Comparing the 2015 and 2020 research trends, we see that topics
+such as Neural Networks, Machine Learning, and <strong>COVID(!?)</strong> are currently
+trending, and seem promising for the near future.
+</p>
+	   </body>
+     <h3>Year Comparison</h3>
+          <br>
+<form role="form" method="POST" action="/">
+  <label for="year1">Choose Year 1:</label>
+  <input id="input1" list="year1" name="number1" placeholder="Select year" style="max-width: 1000px;">
+  <datalist id="year1">
+    <option value="2010">
+    <option value="2011">
+    <option value="2012">
+    <option value="2013">
+    <option value="2014">
+    <option value="2015">
+    <option value="2016">
+    <option value="2017">
+    <option value="2018">
+    <option value="2019">
+    <option value="2020">
+  </datalist>
+<!--div-->
+  <label for="year2">Choose Year 2:</label>
+  <input id="input2" list="year2" name="number2" placeholder="Select year" style="max-width: 1000px;">
+  <datalist id="year2">
+    <option value="2010">
+    <option value="2011">
+    <option value="2012">
+    <option value="2013">
+    <option value="2014">
+    <option value="2015">
+    <option value="2016">
+    <option value="2017">
+    <option value="2018">
+    <option value="2019">
+    <option value="2020">
+  </datalist>
+  <input type="submit">
+          </form>
+          <br>
+          {% for error in errors %}
+            <h4>{{ error }}</h4>
+          {% endfor %}
+          <br>
+
+	<div class="row">
+	{% for image in plot %}
+	 <div class="column">
+             <img src="{{ image }}" style="width:100%">
+	 </div>
+	{% endfor %}
     </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</div>
+</div>
+</div>
+</div>
+    <br><br>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   </body>
 </html>

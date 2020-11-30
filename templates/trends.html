@@ -32,22 +32,69 @@ body {
 <div class="col-sm-10 col-sm-offset-1">
 	<h2> Problem statement</h2>
 	   <body>
-	    <p>This project is geared towards young researchers such as undergraduates motivated to pursue graduate school. Selecting a research topic which might lead to a thesis can be a daunting challenge. There are many factors to be considered. While personal interests and experience matter, a balance must be struck with the currently available opportunities and future promise in any particular field. Within a field, being aware of rising trends, for e.g. 'Machine learning' in Physics, is also extremely important.
+	    <p>
+This project is geared towards young researchers such as undergraduates motivated to pursue graduate school. Undergraduate research experience is a major factor in graduate admissions. However, as a beginner, it is extremely challenging for an undergrad to identify the broad research topics and the fastest growing areas in any field he/she is interested in. Moreover, simply going through publication databases isn't a viable solution: every year thousands of papers are published in every research area in physics!
 </p>
 <p>
-<img src="https://www.meme-arsenal.com/memes/c098fd75956a601eff04312e8e8f133d.jpg" style="width:50%">
+This project attempts to answer some of these problems. I have identified and compared the buzzwords of two different years which gives us an indication of the rising trends in physics. Using topic modelling, I have identified broad research topics as well as sub-topics contained in them. An interested reader can not only get a clear view of the research landscape in any broad are in physics but also find out some of the specific questions that belong to any field. 
 </p>
-<h2>Solution</h2>
-<p>Using the <a href="https://arxiv.org">arxiv</a> database for physics, I have compared the buzz words in all of physics between two different years. We can see some emerging trends such as 'neural networks' and 'machine learning' as well as some topics that have stayed both stable and prolific over the years such as 'optics'.
+<h2>Rising Trends in Physics</h2>
+<p>Using the <a href="https://arxiv.org">arxiv</a> database for physics, I have compared the buzzwords in all areas of physics between two different years, 2010 (on the left) and 2020 (on the right). To create this comparison, I analyzed ~7400 publication titles from 2010 and ~17,000 from 2020. We can see some emerging trends such as 'neural networks' and 'machine learning' as well as some topics that have stayed both stable and prolific over the years such as 'optics'. This is an indication that machine learning is gaining popularity in physics and is a very useful skill to possess. Notice that <strong>COVID</strong> was also talked about frequently by physicists in 2020. </p>
+        <div class="row">
+         <div class="column">
+		<img src="../static/folder/2010_cloud.jpg" alt="2010_cloud" style="width:100%"/>
+  </div>
+  <div class="column">
+                <img src="../static/folder/2020_cloud.jpg" alt="2020_cloud" style="width:100%"/>
+         </div>
+    </div>
+
+</body>
+<p> In 2010, the top 10 most used words were:
+<br>
+'dynamic',
+ 'quantum',
+ 'network',
+ 'optical',
+ 'plasma',
+ 'theory',
+ 'state',
+ 'simulation',
+ 'electron',
+ 'particle'
 </p>
+<p> In 2020, the top 10 most used words are: 
+<br>
+'dynamic',
+ 'quantum',
+ 'network',
+ 'optical',
+ 'simulation',
+ 'flow',
+ 'COVID',
+ 'state',
+ 'Modeling',
+ 'Neural Network'
+</p>
+<h2>Most popular fields in Physics</h2>
 <p>
 A bar chart provided below compares the most active fields within physics between
-two different years. Comparing the 2015 and 2020 research trends, we see that topics
-such as Neural Networks, Machine Learning, and <strong>COVID(!?)</strong> are currently
-trending, and seem promising for the near future.
+2010 and 2020. The numbers on the X-axis are the publication count. Comparing the 2010 and 2020 research trends, we see that the field of 'Optics' stayed 
+the most active in a decade. In contrast, 'Applied Physics' has become more active recently whereas 
+'Physics and Society' has become less popular since 2010.
 </p>
-<h3>Trends: a closer look</h3>
+  <div class="row">
+         <div class="column">
+                <img src="../static/folder/2010_important_areas.jpg" alt="2010_imp_areas" style="width:100%"/>
+         </div>
+  <div class="column">
+                <img src="../static/folder/2020_important_areas.jpg" alt="2010_imp_areas" style="width:100%"/>
+  </div>
+ </div>
+
+<h2>Rising trends: a closer look</h2>
 	   </body>
+We can also look at the change in popularity of some key words/phrases over the years. Plotted below are the frequency vs. year (on the left in blue) and percentage increase from the previous year vs. year (on the right in red) of two phrases, such as 'Neural Network' (top panel) and 'Black Hole' (bottom panel) for example. Neural networks has seen a steady increase in popularity over the years, especially in the year 2017. Black holes, on the other hand, gained popularity between 2015 and 2017 which could be due to the discovery of binary black hole mergers by LIGO in 2015.  
           {% for error in errors %}
             <h4>{{ error }}</h4>
           {% endfor %}
@@ -57,6 +104,27 @@ trending, and seem promising for the near future.
              <img src="{{ image }}" style="width:100%">
 	 </div>
 	{% endfor %}
+<br>
+<br>
+<h2>Topic modeling </h2>
+<p>
+For topic identification, I have implemented an unsupervised machine learning algorithm known as Latent Dirichlet Allocation or LDA. In LDA, each word in a document is assigned a topic. Initially, this assignment is done randomly. To improve upon the assignment of topics to each word, we look at the probability of a word, <i>w</i>, belonging to a particular topic,<i>t</i>. This is calculated by making a subsample of all documents that are classified as a particular topic <i>t</i> and the number of documents in that subsample that contains the word <i>w</i>. The LDA then goes through each document in the corpus and calculates the probability that a topic <i>t</i> is contained in a document <i>d</i>. These two probabilities assign a new probability to every word in the document of belonging to a topic. Repeating this process many times gives us an equilibrium value of the probabilities associated with each word and document.
+</p>
+Below is a list of sub-topics I identified using LDA. I used 13,600 publication titles from the Astrophysics submissions of the year 2020.
+<br>  
+<br>
+Topic 1 (Globular Clusters): star formation, globular cluster, gammaray burst, cosmic ray, molecular cloud
+<br>
+Topic 2 (Cosmology): primordial black hole, dark matter, gravitational wave
+<br> 
+Topic 3 (Compact Objects): fast radio burst, neutron star, white dwarf
+<br>
+Topic 4 (Dwarf Galaxy Physics): dwarf galaxy, xray binary, magellanic cloud, stellar population, emission line
+<br>
+Topic 5 (Stellar Physics): star cluster, protoplanetary disk, supernova remnant, gaia dr, solar flare
+<br>
+<br>
+One can thus see some of the sub-fields and topics within them contained in the vast field of Astrophysics. This could be quite useful for undergrads as it gives them both a broad overview and some specific topics to explore in each sub-field.
     </div>
 </div>
 </div>

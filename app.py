@@ -132,29 +132,29 @@ def fig():
 def trends():
 	filename11 = trends_fig([14, 28, 70, 146, 237, 271]
 ,np.arange(2015,2021),
-'Neural Network','Total frequency')
+'Neural Network','Total frequency','nn_freq','b')
 
 	filename12 = trends_fig([100, 150, 108, 62, 14],np.arange(2016,2021),
-'Neural Network','% increase from last year')
+'Neural Network','% increase from last year','nn_inc_pct','r')
 
 	filename21 = trends_fig([17, 26, 19, 28, 42, 42, 46, 15]
 ,np.arange(2013,2021),
-'Black Hole','Total frequency')
+'Black Hole','Total frequency','bhole_freq','b')
 
 	filename22 = trends_fig([52, -26, 47, 50, 0, 9, -67],np.arange(2014,2021),
-'Black Hole','% increase from last year')
+'Black Hole','% increase from last year','bhole_inc_pct','r')
 	
 
 	return render_template('trends.html',trend_plots=[filename11,filename12,filename21,filename22])
 
-def trends_fig(y,x,plot_title,ylabel):
+def trends_fig(y,x,plot_title,ylabel,name,color):
         rise = y
         fig = Figure()
         x_range = x
         divs = int(abs(min(rise)-5 - max(rise)-20)/6.)
         y_range = np.arange(min(rise)-5,max(rise)+20,divs)
         ax = fig.add_subplot(1, 1, 1)
-        ax.plot(x_range,rise,marker='o',lw=2,markersize=12)
+        ax.plot(x_range,rise,marker='o',color=color,lw=2,markersize=12)
         ax.set_xticks(x_range)
         ax.set_yticks(y_range)
         ax.set_xticklabels(x_range,fontsize=12)
@@ -166,8 +166,8 @@ def trends_fig(y,x,plot_title,ylabel):
 
         canvas = FigureCanvas(fig)
         canvas.draw()
-        millis = int(round(time.time() * 1000))
-        filename = os.path.join(app.config['UPLOAD_FOLDER'], 'trend_' + str(millis) + '.jpg')
+        #millis = int(round(time.time() * 1000))
+        filename = os.path.join(app.config['UPLOAD_FOLDER'], 'trend_' + str(name) + '.jpg')
         fig.savefig(filename, format='jpg')
         return filename
 
