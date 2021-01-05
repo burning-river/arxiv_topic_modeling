@@ -10,7 +10,7 @@ isn't a viable solution: every year thousands of papers are published in every r
 This project attempts to answer some of these problems. I have identified and compared the buzzwords of two different years 
 which gives us an indication of the rising trends in physics. Using topic modelling, I have identified broad research topics 
 as well as sub-topics contained in them. An interested reader can not only get a clear view of the research landscape in any 
-broad are in physics but also find out some of the specific questions that belong to any field. Some EDA results can be found on the `flask` application I created using `heroku`: [app](https://pacific-river-26207.herokuapp.com/home)
+broad are in physics but also find out some of the specific questions that belong to any field. Some EDA results can be found on the `flask` web-application I created on `heroku`: [app](https://pacific-river-26207.herokuapp.com/home)
 
 ## Data source and processing
 
