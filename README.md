@@ -14,7 +14,7 @@ broad are in physics but also find out some of the specific questions that belon
 
 ## Data source and processing
 
-I have used ~13,600 publications on [arxiv](https://export.arxiv.org/list/physics/20) website for data. I then applied lemmatization, removal of punctuations, math symbols, and stopwords, and vectorizer before feeding it to the machine learning algorithm.
+I have used ~13,600 publications from year 2020 on [arxiv](https://export.arxiv.org/list/physics/20) website for data. I then applied lemmatization, removal of punctuations, math symbols, and stopwords, and vectorizer before feeding it to the machine learning algorithm.
 
 ## Machine Learning Algorithms
 
