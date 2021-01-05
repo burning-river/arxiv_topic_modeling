@@ -20,4 +20,4 @@ I have used ~13,600 publications on [arxiv](https://export.arxiv.org/list/physic
 
 I have used two ML algorithms in this work. The first is _k_-means clustering, with `n_clusters` set to 5. There are several visualizations: size of the clusters, frequencies of some popular words in each cluster, most popular words in different clusters using wordclouds, and 2-D visualization of the vector space using PCA. I have used Silhoutte score as the evaluation metric. 
 
-The second method I have applied is the Latent Dirichlet Allocation or LDA using the `gensim` library. Again, the `num_topics` is set to 5. The evaluation metric used is the coherence score.
+The second method I have applied is the Latent Dirichlet Allocation or LDA using the `gensim` library. A good introduction to LDA can be found [here](https://scikit-learn.org/stable/modules/decomposition.html#latentdirichletallocation). Again, the `num_topics` is set to 5. The evaluation metric used is the coherence score.
