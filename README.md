@@ -1,10 +1,11 @@
 ## Project Organization
+```
 .
 ├── README.md                   : Brief project report
 ├── astro-ph.ipynb              : NLP, k-means clustering, Latent Dirichlet Algorithm predictions
 ├── data/                       : Publications data in .pkd format
 └── pdfplots/                   : Important figures
-
+```
 2 directories, 23 files
 
 ## Problem statement
