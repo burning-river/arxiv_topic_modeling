@@ -2,7 +2,7 @@
 ```
 .
 ├── README.md                   : Brief project report
-├── astro-ph.ipynb              : NLP, k-means clustering, Latent Dirichlet Algorithm predictions
+├── astro-ph.ipynb              : NLP, k-means clustering, Latent Dirichlet Algorithm (LDA) predictions
 ├── data/                       : Publications data in .pkd format
 └── pdfplots/                   : Important figures
 ```
