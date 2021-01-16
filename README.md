@@ -19,7 +19,7 @@ isn't a viable solution: every year thousands of papers are published in every r
 This project attempts to answer some of these problems. I have identified and compared the buzzwords of two different years 
 which gives us an indication of the rising trends in physics. Using topic modelling, I have identified broad research topics 
 as well as sub-topics contained in them. An interested reader can not only get a clear view of the research landscape in any 
-broad are in physics but also find out some of the specific questions that belong to any field. For a more high level description of the project, visit my personal [blog](http://saurabhkumar3400.com/arxiv.html)
+broad are in physics but also find out some of the specific questions that belong to any field. For a more high level description of the project, visit my personal [blog](http://saurabhkumar3400.com/arxiv.html).
 
 ## Data source and processing
 
